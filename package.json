@@ -1,0 +1,22 @@
+{
+  "name": "proyectofestivalmusical",
+  "version": "1.0.0",
+  "description": "Implementacion SASS & npm",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css",
+    "hola": "gulp hola"
+  },
+  "keywords": [
+    "SASS",
+    "npm",
+    "Gulp"
+  ],
+  "author": "LuisMazo",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "sass": "^1.76.0"
+  }
+}
