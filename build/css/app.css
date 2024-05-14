@@ -371,3 +371,47 @@ img {
 body > section {
   padding: 10rem 0;
 }
+
+.header {
+  background-color: #07f9a2;
+}
+.header .contenido-header {
+  padding: 2rem;
+}
+@media (min-width: 768px) {
+  .header .contenido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+.header h1 {
+  color: #fff;
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+@media (min-width: 768px) {
+  .header h1 {
+    text-align: left;
+    margin: 0;
+  }
+}
+.header .nav-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .header .nav-principal {
+    flex-direction: row;
+  }
+}
+.header .nav-principal a {
+  color: #fff;
+  font-size: 2rem;
+}
+.header .nav-principal a:hover {
+  color: #0a8967;
+}
