@@ -373,7 +373,7 @@ body > section {
 }
 
 .header {
-  background-color: #07f9a2;
+  background-color: #0a8967;
 }
 .header .contenido-header {
   padding: 2rem;
@@ -413,5 +413,37 @@ body > section {
   font-size: 2rem;
 }
 .header .nav-principal a:hover {
-  color: #0a8967;
+  color: #07f9a2;
+}
+
+.video {
+  height: 100vh;
+  position: relative;
+}
+.video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+  display: flex;
+  align-items: center;
+}
+.video .contenido-video {
+  z-index: 10;
+}
+.video .contenido-video h2 {
+  color: #fff;
+  font-size: 3rem;
+  margin: 0;
+}
+.video .contenido-video p {
+  display: inline-block;
+  background-color: #09c184;
+  padding: 1rem 2rem;
+  margin-top: 1.5rem;
 }
