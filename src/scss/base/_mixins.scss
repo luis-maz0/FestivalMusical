@@ -1,5 +1,16 @@
 @use "variables" as v; 
 
+@mixin gridSim($columnas, $gap : 5rem){
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $gap;
+}
+
+@mixin contenedor{
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
 @mixin telefono{
     @media (min-width: v.$telefono){
         @content;
@@ -15,7 +26,6 @@
         @content;
     }
 }
-
 @mixin escritorioXL{
     @media (min-width: v.$escritorioXL){
         @content

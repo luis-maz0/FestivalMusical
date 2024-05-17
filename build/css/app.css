@@ -447,3 +447,40 @@ body > section {
   padding: 1rem 2rem;
   margin-top: 1.5rem;
 }
+
+.sobre-festival {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.sobre-festival .imagen {
+  height: 100%;
+}
+.sobre-festival .imagen img {
+  height: 100%;
+  object-fit: cover;
+}
+.sobre-festival .contenido-festival {
+  margin-top: 5rem;
+}
+.sobre-festival .contenido-festival h2 {
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .sobre-festival {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 5rem;
+  }
+  .sobre-festival .contenido-festival {
+    margin-top: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .sobre-festival {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
