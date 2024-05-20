@@ -484,3 +484,73 @@ body > section {
     gap: 5rem;
   }
 }
+
+.lineup {
+  background-color: #0c5149;
+}
+.lineup h3, .lineup .dia {
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+.lineup .dia {
+  font-size: 2.75rem;
+}
+
+.escenarios-contenedor {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .escenarios-contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+
+.escenario {
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+.escenario .nombre-escenario {
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.calendario {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.calendario li {
+  padding: 1.5rem;
+}
+.calendario li .hora, .calendario li .artista {
+  display: inline-block;
+}
+.calendario li .hora {
+  margin-right: 4rem;
+  font-weight: 700;
+  width: 1rem;
+}
+.calendario li .artista {
+  font-weight: 400;
+  position: relative;
+}
+.calendario li .artista::before {
+  display: inline;
+  content: "|";
+  padding: 0 2rem;
+}
+
+.bg-1, .bg-2 {
+  background-color: #09c184;
+}
+
+li:nth-child(odd) {
+  background-color: #08a973;
+}

@@ -1,33 +1,38 @@
 @use "variables" as v; 
 
+@mixin reset-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+};
+
 @mixin gridSim($columnas, $gap : 5rem){
     display: grid;
     grid-template-columns: repeat($columnas, 1fr);
     gap: $gap;
-}
-
+};
 @mixin contenedor{
     width: 95%;
     max-width: 120rem;
     margin: 0 auto;
-}
+};
 @mixin telefono{
     @media (min-width: v.$telefono){
         @content;
     }
-}
+};
 @mixin tablet{
     @media (min-width: v.$tablet){
         @content;
     }
-}
+};
 @mixin escritorio{
     @media (min-width: v.$escritorio){
         @content;
     }
-}
+};
 @mixin escritorioXL{
     @media (min-width: v.$escritorioXL){
         @content
     }
-}
+};
