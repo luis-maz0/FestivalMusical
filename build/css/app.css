@@ -637,3 +637,11 @@ body > section {
     margin-top: auto;
   }
 }
+
+.footer {
+  padding: 2rem 0;
+  background-color: #0c5149;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+}
