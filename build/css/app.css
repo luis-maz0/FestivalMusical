@@ -546,11 +546,94 @@ body > section {
   content: "|";
   padding: 0 2rem;
 }
+.calendario li:nth-child(odd) {
+  background-color: #08a973;
+}
 
 .bg-1, .bg-2 {
   background-color: #09c184;
 }
 
-li:nth-child(odd) {
-  background-color: #08a973;
+.contenedor-tickets h3 {
+  text-transform: uppercase;
+}
+
+.tickets {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .tickets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+
+.ticket {
+  color: white;
+  background-color: #0c5149;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+.ticket-nombre {
+  color: white;
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+.ticket-header, .ticket-footer {
+  padding: 0.5rem;
+}
+.ticket-header p, .ticket-footer p {
+  text-align: center;
+  margin: 0;
+}
+.ticket-header {
+  background-color: #09c184;
+}
+.ticket-header p {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  padding: 1rem 0;
+  color: #fff;
+}
+.ticket-body ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ticket-body li {
+  padding: 2rem 3.5rem;
+  border-bottom: 1px solid #0a8967;
+}
+.ticket-body li:last-child {
+  margin-bottom: 2rem;
+}
+.ticket-footer p {
+  font-size: 2rem;
+  font-weight: 900;
+  background-color: #09c184;
+  color: #fff;
+  padding: 1rem 0;
+  border-radius: 1rem;
+  width: 40%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.ticket-footer p:hover {
+  background-color: #0a8967;
+}
+@media (min-width: 768px) {
+  .ticket {
+    display: flex;
+    flex-direction: column;
+  }
+  .ticket-footer {
+    margin-top: auto;
+  }
 }

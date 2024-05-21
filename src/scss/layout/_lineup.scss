@@ -50,10 +50,11 @@
             padding: 0 2rem;
         }
     }
+    li:nth-child(odd){
+    background-color: darken(v.$color-2, 5%);
+    }
 }
 .bg-1, .bg-2{
      background-color:v.$color-2
 }
-li:nth-child(odd){
-    background-color: darken(v.$color-2, 5%);
-}
+
