@@ -23,4 +23,40 @@
         margin-bottom: 3rem;
     }
 }
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.7);
 
+    //Animación al hacer click sobre la img. 
+    animation: fadeIn ease-in .7s;
+    
+    &-img{
+        width: 70rem;
+        height: 70rem;
+        object-fit: cover;
+    }
+    &-fadeOut{
+        animation: fadeOut ease-in .7s;
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
