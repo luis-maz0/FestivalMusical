@@ -1,6 +1,6 @@
 import * as darSass from "sass"
 import gulpSass from "gulp-sass"
-import {src, dest, watch} from "gulp"
+import {src, dest, watch, series} from "gulp"
 
 const sass = gulpSass(darSass) 
 
@@ -11,9 +11,21 @@ export function css (done){
         .pipe( dest("build/css",{sourcemaps: true})) //Establecemos el destino del archivo compilado. 
         //Con sourcemaps nos mostrará la linea de código NO del css sino del scss
         //(Visto desde devtools)
+    done() //termina la tarea. 
+}
+
+//Genera una función que mande nuestro js al directorio build.
+export function js( done ){
+    src("src/js/app.js")
+        .pipe(dest("build/js"))
     done()
 }
 
+//Estará escuchando constantemente los cambios en los archivos scss y js
 export function dev(){
     watch("src/scss/**/*.scss", css)
+    watch("src/js/**/*.js", js)
 }
+
+export default series( js, css, dev ) //Series tomará como argumento las tareas que queremos ejecutar de manera secuencial. (con parallel los ejecuta al mismo tiempo). 
+
