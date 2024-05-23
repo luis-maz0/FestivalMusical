@@ -1,6 +1,7 @@
 @use "../base/variables" as v; 
 
 .footer{
+    margin-top: 10rem;
     padding: 2rem 0;
     background-color: v.$color-4;
     text-align: center;

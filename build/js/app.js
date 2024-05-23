@@ -5,6 +5,7 @@ function crearGaleria(){
     const numImagenes = 5; 
     for (let i = 1; i <= numImagenes; i++) {
         const img = document.createElement("IMG");
+        img.className = "galeria-img"
         img.src = `src/img/galeria${i}.jpg`; // Ajusta la ruta y nombre de las imágenes según tu caso
         img.alt = `imagen galeria ${i}`;
         galeria.appendChild(img);

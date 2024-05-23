@@ -1,0 +1,26 @@
+@use "../base/variables" as v; 
+@use "../base/mixins" as m; 
+
+.galeria{
+    padding-bottom: 0;
+    &-titulo{
+        text-transform: uppercase
+    }
+    @include m.contenedor; 
+    &-imgs{
+        @include m.tablet{
+            @include m.gridSim(2)
+        }
+        @include m.escritorio{
+            @include m.gridSim(3)
+        }
+    }
+    &-img{
+        border-radius: 1rem;
+        display: block;
+        height: 50rem;
+        object-fit: cover;
+        margin-bottom: 3rem;
+    }
+}
+
