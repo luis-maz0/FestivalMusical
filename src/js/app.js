@@ -27,10 +27,21 @@ function mostrarImagen(indiceImg){
     modal.classList.add("modal");
     modal.appendChild(img);
     
+    //Creación boton cierre modal
+
+    const btn = document.createElement("BUTTON"); 
+    btn.textContent = "X";
+    btn.classList.add("btn-cerrar"); 
+    btn.onclick = function(){
+        removerModal();
+    } 
+    modal.appendChild(btn);
+
     //Agregar al body
     const body = document.querySelector("body");
     body.classList.add("overflow-hidden");
     body.appendChild(modal);
+    
     
     //Handler para sacar modal
     modal.onclick = function(){

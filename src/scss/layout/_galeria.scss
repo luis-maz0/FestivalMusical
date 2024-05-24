@@ -25,9 +25,11 @@
 }
 .modal{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
+    gap: 5rem;
     inset: 0;
     background-color: rgba(0,0,0,0.7);
 
@@ -42,6 +44,12 @@
     &-fadeOut{
         animation: fadeOut ease-in .7s;
     }
+}
+.btn-cerrar{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+
 }
 
 @keyframes fadeIn{
