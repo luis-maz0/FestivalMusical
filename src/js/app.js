@@ -1,4 +1,21 @@
-document.addEventListener("DOMContentLoaded", ()=>{ crearGaleria()})
+document.addEventListener("DOMContentLoaded", function(){ 
+    fijarHeader()
+    crearGaleria()
+    resaltarEnlacesNav()
+})
+
+function fijarHeader(){
+    const header = document.querySelector(".header");
+    const sobreFestival = document.querySelector(".sobre-festival");
+
+    document.addEventListener("scroll", ()=>{
+        if( sobreFestival.getBoundingClientRect().bottom < 1 ){
+            header.classList.add("fixed");
+        }else{
+            header.classList.remove("fixed");
+        }
+    })
+}
 
 function crearGaleria(){
     const galeria = document.querySelector(".galeria-imgs");
@@ -57,4 +74,28 @@ function removerModal(){
     setTimeout(() => {
         modal.remove();
     }, 500);
+}
+function resaltarEnlacesNav(){
+    document.addEventListener("scroll", ()=>{
+        const sections = document.querySelectorAll("section"); 
+        const navLinks = document.querySelectorAll(".nav-principal a");
+        let actual = ""; 
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop; //Toma la medida del top del section con el elemento padre (body)
+            const sectionHeight = section.clientHeight //Medida de la section (alto). 
+            if( window.scrollY >= (sectionTop - (sectionHeight / 3))){ //Con dicha cuente definimos cuanto queremos ver de la section. 
+                actual = section.id; 
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if(link.getAttribute("href") === "#" + actual){
+                link.classList.add("active"); 
+            }
+            console.log("yeh")
+        })
+
+    })
 }
