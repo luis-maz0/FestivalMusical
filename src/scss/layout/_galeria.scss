@@ -37,8 +37,10 @@
     animation: fadeIn ease-in .7s;
     
     &-img{
-        width: 70rem;
-        height: 70rem;
+        width: 80rem;
+        height: 80rem;
+        max-width: 70vw;
+        max-height: 70vh;
         object-fit: cover;
     }
     &-fadeOut{

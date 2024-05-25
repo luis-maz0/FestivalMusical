@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function(){ 
-    fijarHeader()
-    crearGaleria()
-    resaltarEnlacesNav()
+    fijarHeader();
+    crearGaleria();
+    resaltarEnlacesNav();
+    crearSmoothScroll();
 })
-
 function fijarHeader(){
     const header = document.querySelector(".header");
     const sobreFestival = document.querySelector(".sobre-festival");
@@ -16,7 +16,6 @@ function fijarHeader(){
         }
     })
 }
-
 function crearGaleria(){
     const galeria = document.querySelector(".galeria-imgs");
     const numImagenes = 5; 
@@ -34,8 +33,9 @@ function crearGaleria(){
     }
 }
 function mostrarImagen(indiceImg){
+    //Crear una img y agregar atributos
     const img = document.createElement("IMG");
-    img.className = "modal-img"
+    img.classList.add("modal-img");
     img.src = `src/img/galeria${indiceImg}.jpg`;
     img.alt = `imagen galeria ${indiceImg}`;
 
@@ -45,13 +45,10 @@ function mostrarImagen(indiceImg){
     modal.appendChild(img);
     
     //Creación boton cierre modal
-
     const btn = document.createElement("BUTTON"); 
     btn.textContent = "X";
     btn.classList.add("btn-cerrar"); 
-    btn.onclick = function(){
-        removerModal();
-    } 
+    btn.addEventListener("click", removerModal);
     modal.appendChild(btn);
 
     //Agregar al body
@@ -61,15 +58,15 @@ function mostrarImagen(indiceImg){
     
     
     //Handler para sacar modal
-    modal.onclick = function(){
+    modal.addEventListener("click", ()=>{
         removerModal();
         body.classList.remove("overflow-hidden");
-    }
+    });
 }
 
 function removerModal(){
     const modal = document.querySelector(".modal");
-    modal.classList.add ("modal-fadeOut");
+    modal.classList.add("modal-fadeOut");
     //Retrasamos el tiempo para la ejecución del bloque del setTimeOut. 
     setTimeout(() => {
         modal.remove();
@@ -94,8 +91,18 @@ function resaltarEnlacesNav(){
             if(link.getAttribute("href") === "#" + actual){
                 link.classList.add("active"); 
             }
-            console.log("yeh")
         })
 
+    })
+}
+function crearSmoothScroll(){
+    const navLinks = document.querySelectorAll(".nav-principal a");
+    navLinks.forEach( link => {
+        link.addEventListener("click", (e)=>{
+            e.preventDefault(); 
+            const sectionScroll = e.target.getAttribute("href");
+            const section = document.querySelector(sectionScroll);
+            section.scrollIntoView({ behavior: "smooth"});
+        });
     })
 }
