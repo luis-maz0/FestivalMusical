@@ -20,29 +20,30 @@ function crearGaleria(){
     const galeria = document.querySelector(".galeria-imgs");
     const numImagenes = 5; 
     for (let i = 1; i <= numImagenes; i++) {
-        const img = document.createElement("IMG");
-        img.className = "galeria-img"
-        img.src = `src/img/galeria${i}.jpg`; // Ajusta la ruta y nombre de las imágenes según tu caso
-        img.alt = `imagen galeria ${i}`;
+        const picture = document.createElement("PICTURE");
+        picture.innerHTML = `<source srcset="build/img/gallery/thumb/galeria${i}.avif" type="image/avif">
+                            <source srcset="build/img/gallery/thumb/galeria${i}.webp" type="image/webp">
+                            <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/galeria${i}.jpg" alt="imagen galeria">`;
 
         //EVENT HANDLER
-        img.onclick = function(){
+        picture.onclick = function(){
             mostrarImagen(i)
         }
-        galeria.appendChild(img);
+        galeria.appendChild(picture);
     }
 }
 function mostrarImagen(indiceImg){
-    //Crear una img y agregar atributos
-    const img = document.createElement("IMG");
-    img.classList.add("modal-img");
-    img.src = `src/img/galeria${indiceImg}.jpg`;
-    img.alt = `imagen galeria ${indiceImg}`;
+    //Crear una pictura y agregar atributos
+    const picture = document.createElement("PICTURE");
+    picture.classList.add("modal-img");
+    picture.innerHTML = `<source srcset="build/img/gallery/full/galeria${indiceImg}.avif" type="image/avif">
+                        <source srcset="build/img/gallery/full/galeria${indiceImg}.webp" type="image/webp">
+                        <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/galeria${indiceImg}.jpg" alt="imagen galeria">`;
 
     //General fondo o modal de img
     const modal = document.createElement("DIV");
     modal.classList.add("modal");
-    modal.appendChild(img);
+    modal.appendChild(picture);
     
     //Creación boton cierre modal
     const btn = document.createElement("BUTTON"); 
